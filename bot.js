@@ -39,6 +39,9 @@ function heads_or_tails(mess) {
     mess.channel.send(':new_moon: Решка!') 
   } else if (random === 3) { // Если вычислено число 3, то монета падает ребром.
     mess.channel.send(':last_quarter_moon: Монета упала ребром!')
+  } else {
+    mess.channel.send('Монета улетела в другую галактику. Попробуйте ещё раз!')
+    }
 }
 }
 
