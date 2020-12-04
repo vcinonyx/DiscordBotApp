@@ -15,15 +15,15 @@ client.on("message", msg => {
     }
    
   if (msg.content.includes(BOT_PREFIX)) {
-    if (msg.content.toLowerCase() === `${BOT_PREFIX}${MOD_ME_COMMAND}`) {
+    if (msg.content === `${BOT_PREFIX}${MOD_ME_COMMAND}`) {
       modUser(msg.member)
     }
 
-    if(msg.content.toLowerCase().includes(`${BOT_PREFIX}${CLEAR_COMMAND}`)) {
+    if(msg.content.includes(`${BOT_PREFIX}${CLEAR_COMMAND}`)) {
       clear(msg);
     }
 
-    if(msg.content.toLowerCase() === `${BOT_PREFIX}${HEADS_OR_TAILS_COMMAND}`){
+    if(msg.content === `${BOT_PREFIX}${HEADS_OR_TAILS_COMMAND}`){
       heads_or_tails(msg);
     }
 }
