@@ -1,4 +1,3 @@
-require("dotenv").config()
 
 const Discord = require("discord.js")
 const client = new Discord.Client({
@@ -53,5 +52,5 @@ function clear(mess) { // Создание новой функции с кома
          delete_messages(); 
  }
 
-client.login(process.env.BOT_TOKEN)
+ client.login(process.env.token)
 
