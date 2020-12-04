@@ -13,20 +13,18 @@ client.on("message", msg => {
       if (msg.content == "I love teorver") {
        msg.react("❤️")
     }
-   
-  if (msg.content.includes(BOT_PREFIX)) {
-    if (msg.content === `${BOT_PREFIX}${MOD_ME_COMMAND}`) {
-      modUser(msg.member)
-    }
 
-    if(msg.content.includes(`${BOT_PREFIX}${CLEAR_COMMAND}`)) {
-      clear(msg);
-    }
+  if (msg.content === `${BOT_PREFIX}${MOD_ME_COMMAND}`) {
+    modUser(msg.member)
+  }
 
-    if(msg.content === `${BOT_PREFIX}${HEADS_OR_TAILS_COMMAND}`){
-      heads_or_tails(msg);
-    }
-}
+  if(msg.content.includes(`${BOT_PREFIX}${CLEAR_COMMAND}`)) {
+    clear(msg);
+  }
+
+  if(msg.content === `${BOT_PREFIX}${HEADS_OR_TAILS_COMMAND}`){
+    heads_or_tails(msg);
+  }
 })
 
 
@@ -66,8 +64,9 @@ function clear(mess) { // Создание новой функции с кома
   if (amount < 1) return mess.channel.send('Вы должны ввести число больше чем 1');
   
     async function delete_messages() {
-      await mess.channel.messages.fetch({ limit: amount + 1 }).then(messages => {
+      await mess.channel.messages.fetch({ limit: amount }).then(messages => {
           mess.channel.bulkDelete(messages)
+          mess.channel.send(`Удалено ${amount} сообщений!`)
       })};  
       delete_messages(); 
  }
