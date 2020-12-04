@@ -65,8 +65,7 @@ function clear(mess) { // Создание новой функции с кома
   
     async function delete_messages() {
       await mess.channel.messages.fetch({ limit: amount }).then(messages => {
-          mess.channel.bulkDelete(messages)
-          mess.channel.send(`Удалено ${amount} сообщений!`)
+          mess.channel.bulkDelete(messages);
       })};  
       delete_messages(); 
  }
