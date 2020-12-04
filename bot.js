@@ -43,7 +43,7 @@ function heads_or_tails(mess) {
     mess.channel.send('Монета улетела в другую галактику. Попробуйте ещё раз!')
     }
 }
-}
+
 
 
 function modUser(member) {
