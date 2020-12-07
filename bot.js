@@ -53,7 +53,7 @@ function modUser(member) {
 
 
 
-function clear(mess) { // Создание новой функции с командой
+function clear(mess) {
   const arggs = mess.content.split(' ').slice(1);
   const amount = arggs.join(' ');
   
@@ -64,7 +64,7 @@ function clear(mess) { // Создание новой функции с кома
   if (amount < 1) return mess.channel.send('Вы должны ввести число больше чем 1');
   
     async function delete_messages() {
-      await mess.channel.messages.fetch({ limit: amount+1 }).then(messages => {
+      await mess.channel.messages.fetch({ limit: amount}).then(messages => {
           mess.channel.bulkDelete(messages);
       })};  
       delete_messages(); 
